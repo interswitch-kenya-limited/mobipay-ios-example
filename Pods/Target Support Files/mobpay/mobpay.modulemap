@@ -1,0 +1,6 @@
+framework module mobpay {
+  umbrella header "mobpay-umbrella.h"
+
+  export *
+  module * { export * }
+}
