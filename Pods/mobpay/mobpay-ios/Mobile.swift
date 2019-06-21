@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Mobile {
+public struct Mobile {
  
     var phone:String;
    

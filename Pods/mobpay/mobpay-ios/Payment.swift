@@ -23,6 +23,6 @@ public struct Payment{
         self.preauth = preauth
         self.narration = narration
     }
-
+    
     
 }

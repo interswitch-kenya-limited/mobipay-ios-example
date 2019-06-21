@@ -3,6 +3,7 @@ PODS:
   - Eureka (5.0.0)
   - mobpay (0.0.1):
     - CryptoSwift (~> 1.0)
+    - Eureka (~> 5.0.0)
     - PercentEncoder (~> 1.2)
     - SwiftyRSA (~> 1.5)
   - PercentEncoder (1.2.1)
@@ -12,7 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Eureka
-  - mobpay (from `https://github.com/interswitch-kenya-limited/mobpay-ios-lib.git`)
+  - mobpay (from `../mobpay-ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,20 +24,15 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   mobpay:
-    :git: https://github.com/interswitch-kenya-limited/mobpay-ios-lib.git
-
-CHECKOUT OPTIONS:
-  mobpay:
-    :commit: 2296881fadbbb3c938494c3e8c55093966d331d8
-    :git: https://github.com/interswitch-kenya-limited/mobpay-ios-lib.git
+    :path: "../mobpay-ios"
 
 SPEC CHECKSUMS:
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
-  mobpay: 435286865a80e4adafa71b5918c14e9760a744b4
+  mobpay: 6cb52c9a219c05ef473240ee404bbe99a6f58b72
   PercentEncoder: 40a4d727ebeda2a6ec77bf34fa620cc4b5845488
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: 938abc465b5319df20da1ebda4d7875f8f9e56b6
+PODFILE CHECKSUM: e3c3347e22dfd206006474ee111eb1b8ccab39e7
 
 COCOAPODS: 1.7.0

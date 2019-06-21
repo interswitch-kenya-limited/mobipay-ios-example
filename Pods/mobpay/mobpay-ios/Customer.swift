@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Customer{
+public struct Customer{
     var customerId,firstName,secondName,email,mobile,city,country,postalCode,street,state : String;
     
     public init(customerId: String,firstName : String , secondName : String,email : String,mobile : String, city : String, country : String, postalCode : String, street : String, state : String) {

@@ -1,9 +1,9 @@
 {
   "name": "mobpay",
   "version": "0.0.1",
-  "summary": "Mobpay is a payment lib",
-  "description": "longer description",
-  "homepage": "http://EXAMPLE/mobpay",
+  "summary": "MobPay - An iOS library for integrating card and mobile payments through Interswitch",
+  "description": "This SDK library enables you to integrate Interswitch payments to your mobile app",
+  "homepage": "https://www.interswitchgroup.com/ke/",
   "license": "MIT",
   "authors": {
     "Allan Mageto": "allanbmageto@gmail.com"
@@ -26,6 +26,9 @@
     ],
     "PercentEncoder": [
       "~> 1.2"
+    ],
+    "Eureka": [
+      "~> 5.0.0"
     ]
   },
   "swift_version": "5.0"

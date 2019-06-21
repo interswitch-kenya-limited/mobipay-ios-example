@@ -9,7 +9,7 @@
 import Foundation
 
 // card structure
-public class Card{
+public struct Card{
     var pan : String;
     var cvv : String;
     var expiryYear : String;
