@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import mobpay
+import MobpayiOS
 import Eureka
 import CryptoSwift
 
@@ -404,10 +404,12 @@ class ViewController: FormViewController{
                 }.onCellSelection {cell , row in
                     try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)}
             }
-//            <<< ButtonRow("Launch UI") { (row: ButtonRow) -> Void in
-//                row.title = row.tag
-//                row.presentationMode = .segueName(segueName: "InterSwitchPaymentUI", onDismiss: nil)
-//        }
+            <<< ButtonRow("Launch UI") { (row: ButtonRow) -> Void in
+                row.title = row.tag
+                }.onCellSelection {cell, row in
+                    let interSwitchPaymentController = InterSwitchPaymentUI()
+                    self.navigationController?.pushViewController(interSwitchPaymentController, animated: true)
+        }
 //            <<< ButtonRow("Hidden rows") { (row: ButtonRow) -> Void in
 //                row.title = row.tag
 //                row.presentationMode = .segueName(segueName: "HiddenRowsControllerSegue", onDismiss: nil)
