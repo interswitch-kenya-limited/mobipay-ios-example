@@ -161,18 +161,22 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework"
+  install_framework "${PODS_ROOT}/../../mobpay-ios/mobpay-ios/CardinalMobile.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MobpayiOS/MobpayiOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PercentEncoder/PercentEncoder.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/mobpay/mobpay.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework"
+  install_framework "${PODS_ROOT}/../../mobpay-ios/mobpay-ios/CardinalMobile.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MobpayiOS/MobpayiOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PercentEncoder/PercentEncoder.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/mobpay/mobpay.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

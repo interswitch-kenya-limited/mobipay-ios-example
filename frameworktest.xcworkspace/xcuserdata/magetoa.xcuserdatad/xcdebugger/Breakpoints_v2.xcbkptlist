@@ -262,7 +262,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.155756"
+            timestampString = "583253086.3700221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -278,7 +278,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.156312"
+            timestampString = "583253086.37009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "372"
@@ -290,30 +290,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #63 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #64 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
                   moduleName = "frameworktest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/frameworktest/ViewController.swift"
-                  timestampString = "582799108.768919"
+                  timestampString = "583253086.450824"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "370"
-                  endingLineNumber = "370"
+                  startingLineNumber = "372"
+                  endingLineNumber = "372"
                   offsetFromSymbolStart = "2152">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #63 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #64 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
                   moduleName = "frameworktest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/frameworktest/ViewController.swift"
-                  timestampString = "582799108.771253"
+                  timestampString = "583253086.452745"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "370"
-                  endingLineNumber = "370"
+                  startingLineNumber = "372"
+                  endingLineNumber = "372"
                   offsetFromSymbolStart = "35">
                </Location>
             </Locations>
@@ -646,7 +646,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.157503"
+            timestampString = "583253086.370321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "398"
@@ -694,7 +694,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.157831"
+            timestampString = "583253086.370373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "405"
@@ -706,30 +706,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #69 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #70 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
                   moduleName = "frameworktest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/frameworktest/ViewController.swift"
-                  timestampString = "582799108.789615"
+                  timestampString = "583253086.4680901"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "403"
-                  endingLineNumber = "403"
+                  startingLineNumber = "405"
+                  endingLineNumber = "405"
                   offsetFromSymbolStart = "56">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #69 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #70 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
                   moduleName = "frameworktest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/frameworktest/ViewController.swift"
-                  timestampString = "582799108.791707"
+                  timestampString = "583253086.469883"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "403"
-                  endingLineNumber = "403"
+                  startingLineNumber = "405"
+                  endingLineNumber = "405"
                   offsetFromSymbolStart = "35">
                </Location>
             </Locations>
@@ -749,38 +749,6 @@
             endingLineNumber = "78"
             landmarkName = "confirmMobileMoneyPayment(orderId:clientId:clientSecret:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mobpay.Mobpay.confirmMobileMoneyPayment(orderId: Swift.String, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/mobpay-ios/mobpay-ios/Mobpay.swift"
-                  timestampString = "582799108.863608"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "85">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in mobpay.Mobpay.confirmMobileMoneyPayment(orderId: Swift.String, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/mobpay-ios/mobpay-ios/Mobpay.swift"
-                  timestampString = "582799108.865012"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -813,38 +781,6 @@
             endingLineNumber = "49"
             landmarkName = "submitConfirmMobilePayment(clientId:clientSecret:httpRequest:transactionRef:completion:)"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mobpay.submitConfirmMobilePayment(clientId: Swift.String, clientSecret: Swift.String, httpRequest: Swift.String, transactionRef: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/mobpay-ios/mobpay-ios/ConfirmMobilePayment.swift"
-                  timestampString = "582799108.876119"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "7138">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in mobpay.submitConfirmMobilePayment(clientId: Swift.String, clientSecret: Swift.String, httpRequest: Swift.String, transactionRef: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/mobpay-ios/mobpay-ios/ConfirmMobilePayment.swift"
-                  timestampString = "582799108.88237"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "182">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -918,7 +854,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.158451"
+            timestampString = "583253086.370488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "373"
@@ -930,30 +866,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #63 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #64 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
                   moduleName = "frameworktest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/frameworktest/ViewController.swift"
-                  timestampString = "582799108.8082269"
+                  timestampString = "583253086.482746"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
+                  startingLineNumber = "373"
+                  endingLineNumber = "373"
                   offsetFromSymbolStart = "2810">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #63 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #64 (Eureka.ButtonCellOf&lt;Swift.String&gt;, Eureka.ButtonRowOf&lt;Swift.String&gt;) -&gt; () in frameworktest.ViewController.viewDidLoad() -&gt; ()"
                   moduleName = "frameworktest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/frameworktest/ViewController.swift"
-                  timestampString = "582799108.811228"
+                  timestampString = "583253086.484567"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "371"
-                  endingLineNumber = "371"
+                  startingLineNumber = "373"
+                  endingLineNumber = "373"
                   offsetFromSymbolStart = "40">
                </Location>
             </Locations>
@@ -966,7 +902,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.158771"
+            timestampString = "583253086.3705339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "374"
@@ -998,7 +934,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.159137"
+            timestampString = "583253086.370592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -1014,7 +950,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.1594369"
+            timestampString = "583253086.370635"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -1030,12 +966,140 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "frameworktest/ViewController.swift"
-            timestampString = "582800564.159754"
+            timestampString = "583253086.3706779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "showResponse(message:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.370723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.371079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.371366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.371632"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.371865"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.3720731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.372298"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/SubmitCardPayment.swift"
+            timestampString = "583253086.372509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

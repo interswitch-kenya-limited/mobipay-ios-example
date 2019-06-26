@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import mobpay
+import MobpayiOS
 import Eureka
 import CryptoSwift
 
