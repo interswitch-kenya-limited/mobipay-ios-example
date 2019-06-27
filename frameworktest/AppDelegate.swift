@@ -4,8 +4,7 @@
 //
 //  Created by Allan Mageto on 24/05/2019.
 //  Copyright © 2019 Allan Mageto. All rights reserved.
-// IKIA9A10A4795B5C94BBCF97300958DB16598C1C48AB
-// jdl3sGVBnSUVo8xFreD1l9etqYiLkXwnm9V2d1zgd4A=
+
 
 import UIKit
 
