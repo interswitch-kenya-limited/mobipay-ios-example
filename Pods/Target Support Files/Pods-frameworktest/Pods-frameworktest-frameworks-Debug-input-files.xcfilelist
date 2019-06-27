@@ -1,6 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-frameworktest/Pods-frameworktest-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework
 ${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework
+${BUILT_PRODUCTS_DIR}/MobpayiOS/MobpayiOS.framework
 ${BUILT_PRODUCTS_DIR}/PercentEncoder/PercentEncoder.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework
-${BUILT_PRODUCTS_DIR}/mobpay/mobpay.framework

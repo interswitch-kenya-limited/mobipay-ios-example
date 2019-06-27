@@ -1,7 +1,7 @@
 PODS:
   - CryptoSwift (1.0.0)
   - Eureka (5.0.0)
-  - mobpay (0.0.1):
+  - MobpayiOS (0.1.5):
     - CryptoSwift (~> 1.0)
     - Eureka (~> 5.0.0)
     - PercentEncoder (~> 1.2)
@@ -13,7 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Eureka
-  - mobpay (from `../mobpay-ios`)
+  - MobpayiOS (from `../mobpay-ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,16 +23,16 @@ SPEC REPOS:
     - SwiftyRSA
 
 EXTERNAL SOURCES:
-  mobpay:
+  MobpayiOS:
     :path: "../mobpay-ios"
 
 SPEC CHECKSUMS:
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
-  mobpay: 6cb52c9a219c05ef473240ee404bbe99a6f58b72
+  MobpayiOS: 0ab30f2c4bfbf3fe77626d5507dac89bf5253b51
   PercentEncoder: 40a4d727ebeda2a6ec77bf34fa620cc4b5845488
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: e3c3347e22dfd206006474ee111eb1b8ccab39e7
+PODFILE CHECKSUM: 936cfc514e2f3772bd8072a3bf6d877be14182a4
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.7.2

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import mobpay
+import MobpayiOS
 import Eureka
 import CryptoSwift
 
@@ -103,7 +103,10 @@ class ViewController: FormViewController{
                 row.title = "Client Secret"
                 row.placeholder = "Client Secret"
                 row.value = clientSecret
-            }
+                }.onChange({(row) in
+                    self.clientSecret = row.value != nil ? row.value! : ""
+                    print(self.clientSecret)
+                })
         +++ Section("Customer Details")
             <<< TextRow(){row in
                 row.title = "Customer ID"
