@@ -71,6 +71,8 @@ class ViewController: FormViewController{
             }
             return nil
         }
+        
+        
         func showResponse(message: String){
             //while showing the response if theres a token it will add the token to the array
             let responseAsJson = convertToDictionary(message: message)
@@ -404,13 +406,15 @@ class ViewController: FormViewController{
                 }.onCellSelection {cell , row in
                     try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)}
             }
-
+        
             <<< ButtonRow("Launch UI") { (row: ButtonRow) -> Void in
                 row.title = row.tag
                 }.onCellSelection {cell, row in
-                    let interSwitchPaymentController = Mobpay.instance.UserInterfaceController
-                    self.navigationController?.pushViewController(interSwitchPaymentController, animated: true)
+
+                    let merchant = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    let payment = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customer = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    try!Mobpay.instance.launchUI(merchant: merchant, payment: payment, customer: customer, clientId: self.clientId, clientSecret: self.clientSecret){(completion) in self.navigationController?.pushViewController(completion, animated: true)}
         }
 }
-
 }
