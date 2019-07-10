@@ -372,7 +372,7 @@ class ViewController: FormViewController{
                     let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
                     let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
                     let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
-                        try!Mobpay.instance.makeCardPayment(card: cardInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)
+                    try!Mobpay.instance.makeCardPayment(card: cardInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in print(completion)
                         }
                     
                 })
@@ -407,14 +407,6 @@ class ViewController: FormViewController{
                 }.onCellSelection {cell , row in
                     try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)}
             }
-//            <<< ButtonRow("Launch UI") { (row: ButtonRow) -> Void in
-//                row.title = row.tag
-//                row.presentationMode = .segueName(segueName: "InterSwitchPaymentUI", onDismiss: nil)
-//        }
-//            <<< ButtonRow("Hidden rows") { (row: ButtonRow) -> Void in
-//                row.title = row.tag
-//                row.presentationMode = .segueName(segueName: "HiddenRowsControllerSegue", onDismiss: nil)
-//        }
 }
 
 }
