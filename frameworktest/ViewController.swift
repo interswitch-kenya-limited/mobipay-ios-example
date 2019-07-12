@@ -10,6 +10,7 @@ import UIKit
 import MobpayiOS
 import Eureka
 import CryptoSwift
+import SafariServices
 
 class ViewController: FormViewController{
     //CLIENT VARIABLES
@@ -407,6 +408,27 @@ class ViewController: FormViewController{
                 }.onCellSelection {cell , row in
                     try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)}
             }
+            <<< ButtonRow(){
+                $0.title = "Highly Flamable Experiment"
+                }.onCellSelection{cell,row in
+                    let cardInput = Card(pan: String(self.pan), cvv: String(self.cvv), expiryYear: String(self.expYear), expiryMonth: String(self.expMonth), tokenize: self.tokenize)
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    //get webURL
+                    let webCardinalURL = Mobpay.instance.generateWebQuery(card: cardInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret)
+                    let svc = SFSafariViewController(url: webCardinalURL)
+                    self.present(svc, animated: true, completion: nil)
+                    //get value with callback
+                    Mobpay.instance.getReturnPayload(merchantId: self.merchantId,transactionRef: self.transactionRef){(payloadFromServer) in
+                        self.dismiss(animated: true)
+                        showResponse(message: payloadFromServer)
+                        
+                    }
+
+                    
+                    
+        }
 }
 
 }
