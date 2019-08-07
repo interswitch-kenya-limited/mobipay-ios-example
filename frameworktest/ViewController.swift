@@ -21,7 +21,7 @@ class ViewController: FormViewController{
     var customerId:String = "test@example.com";
     var firstName:String = "John";
     var secondName:String = "Doe";
-    var emailAddress:String = "johnDoe@test.com";
+    var emailAddress:String = "johndoe@test.com";
     var mobileNumber:String = "0712345678";
     var city:String = "NBI";
     var country:String = "KE";
@@ -33,7 +33,7 @@ class ViewController: FormViewController{
     var merchantId:String = "ISWKEN0001";
     var merchantDomain:String = "ISWKE";
     //payment Details
-    var paymentAmount:Int = 850;
+    var paymentAmount:Int = Int.random(in: 0 ... 999);
     var transactionRef:String = "LINiOS0009";
     var orderId:String = "LINiOS0009";
     var termianalId:String = "3CRZ0001";
@@ -53,39 +53,37 @@ class ViewController: FormViewController{
     var phone:String = "0712345678";
     
     //token
+    var cardTokens : Array<CardToken> = []
+    var goodToken:CardToken = CardToken(token: "1E83B03ACFC5DF31985B83CF1F018B63AD54134DA6C425E83D", expiry: "11/22", cvv: "111", panLast4Digits: "1111", panFirst6Digits: "411111")
     var tokens:Array<String> = ["1E83B03ACFC5DF31985B83CF1F018B63AD54134DA6C425E83D"];
     var token:String = ""
     var expiry:String = "0222"
     
-    
+    func showResponse(message: String){
+        //while showing the response if theres a token it will add the token to the array
+        let responseAsJson = convertToDictionary(message: message)
+        let tokenExists = responseAsJson?["token"] != nil
+        if(tokenExists == true){
+            self.cardTokens.append(CardToken(token: responseAsJson?["token"] as! String, expiry: responseAsJson?["expiry"] as! String, panLast4Digits: responseAsJson?["panLast4Digits"] as! String, panFirst6Digits: responseAsJson?["panFirst6Digits"] as! String))
+            self.tokens.append(responseAsJson?["token"] as! String)
+            self.form.rowBy(tag: "ExampleTokens")?.updateCell()
+        }
+        let alert = UIAlertController(title: "Backend Report", message: message, preferredStyle: .alert);
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel,handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func convertToDictionary(message: String) -> [String: Any]? {
+        if let data = message.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        func convertToDictionary(message: String) -> [String: Any]? {
-            if let data = message.data(using: .utf8) {
-                do {
-                    return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-            return nil
-        }
-        func showResponse(message: String){
-            //while showing the response if theres a token it will add the token to the array
-            let responseAsJson = convertToDictionary(message: message)
-            let tokenExists = responseAsJson?["token"] != nil
-            if(tokenExists == true){
-                self.tokens.append(responseAsJson?["token"] as! String)
-                self.form.rowBy(tag: "ExampleTokens")?.updateCell()
-            }
-            let alert = UIAlertController(title: "Backend Report", message: message, preferredStyle: .alert);
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel,handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
         //CUSTOMER DETAILS SECTION
         form
         +++ Section("Client Details")
@@ -97,7 +95,6 @@ class ViewController: FormViewController{
         
             }.onChange({(row) in
                 self.clientId = row.value != nil ? row.value! : ""
-                print(self.clientId)
                 })
             <<< TextRow(){
                 row in
@@ -106,7 +103,6 @@ class ViewController: FormViewController{
                 row.value = clientSecret
                 }.onChange({(row) in
                     self.clientSecret = row.value != nil ? row.value! : ""
-                    print(self.clientSecret)
                 })
         +++ Section("Customer Details")
             <<< TextRow(){row in
@@ -338,7 +334,7 @@ class ViewController: FormViewController{
                 $0.title = "Example Tokens"
                 $0.selectorTitle = "choose your token"
                 $0.options = self.tokens
-                $0.value = self.tokens[0]
+                $0.value = self.token
                 }
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
@@ -374,14 +370,14 @@ class ViewController: FormViewController{
                     let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
                     let mobileInput = Mobile(phone: self.phone)
         
-                    try!Mobpay.instance.makeMobileMoneyPayment(mobile: mobileInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId, clientSecret:self.clientSecret){ (completion) in showResponse(message: completion)
+                    try!Mobpay.instance.makeMobileMoneyPayment(mobile: mobileInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId, clientSecret:self.clientSecret){ (completion) in self.showResponse(message: completion)
                     }
         }
             
             <<< ButtonRow(){
                 $0.title = "Confirm Mobile Money Payment"
                 }.onCellSelection {cell , row in
-                    try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)}
+                    try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in self.showResponse(message: completion)}
             }
             
             
@@ -399,7 +395,7 @@ class ViewController: FormViewController{
                     //get value with callback
                     Mobpay.instance.getReturnPayload(merchantId: self.merchantId,transactionRef: self.transactionRef){(payloadFromServer) in
                         self.dismiss(animated: true)
-                        showResponse(message: payloadFromServer)
+                        self.showResponse(message: payloadFromServer)
                         
                     }
         }
@@ -411,7 +407,6 @@ class ViewController: FormViewController{
                     let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
                     let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
                     let cardToken = CardToken(token: self.token, expiry: self.expiry, cvv: String(self.cvv))
-                    
                     //get url
                     let webCardinalURL = Mobpay.instance.generateCardTokenWebQuery(cardToken: cardToken, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret)
                     let svc = SFSafariViewController(url: webCardinalURL)
@@ -419,20 +414,27 @@ class ViewController: FormViewController{
                     //get value with callback
                     Mobpay.instance.getReturnPayload(merchantId: self.merchantId,transactionRef: self.transactionRef){(payloadFromServer) in
                         self.dismiss(animated: true)
-                        showResponse(message: payloadFromServer)
+                        self.showResponse(message: payloadFromServer)
                     }
         }
-        
-            <<< ButtonRow("Launch UI") { (row: ButtonRow) -> Void in
+            <<< ButtonRow("Launch UI"){(row: ButtonRow) -> Void in
                 row.title = row.tag
-                }.onCellSelection {cell, row in
-                    
-                    let merchant = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
-                    let payment = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
-                    let customer = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
-//                    try!Mobpay.instance.launchUI(merchant: merchant, payment: payment, customer: customer, clientId: self.clientId, clientSecret: self.clientSecret){(completion) in self.navigationController?.pushViewController(completion, animated: true)}
-                    self.navigationController?.pushViewController(Mobpay.instance.launchUI(merchant: merchant, payment: payment, customer: customer,clientId: self.clientId,clientSecret: self.clientSecret),animated: true)
+                }.onCellSelection{cell,row in
+                let merchant = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                let payment = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                let customer = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    try!Mobpay.instance.launchUI(merchant: merchant, payment: payment, customer: customer, clientId: self.clientId, clientSecret: self.clientSecret, cardTokens: self.cardTokens){(launchUI) in
+                    Mobpay.instance.MobpayDelegate = self
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(launchUI, animated: true)
+                    }
+                }
         }
+    }    
 }
-    
+extension ViewController:MobpayPaymentDelegate{
+    func launchUIPayload(_ message: String) {
+        self.navigationController?.popToRootViewController(animated: true)
+        showResponse(message: message)
+    }
 }

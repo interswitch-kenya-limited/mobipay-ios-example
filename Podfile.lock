@@ -2,15 +2,13 @@ PODS:
   - CocoaAsyncSocket (7.6.3)
   - CocoaMQTT (1.2.4):
     - CocoaAsyncSocket (~> 7.6.3)
-  - CreditCardRow (3.2.0):
-    - Eureka (~> 5.0)
   - CryptoSwift (1.0.0)
   - Eureka (5.0.0)
+  - FormTextField (3.0.0)
   - MobpayiOS (0.1.5):
     - CocoaMQTT (~> 1.2)
-    - CreditCardRow (~> 3.2)
     - CryptoSwift (~> 1.0)
-    - Eureka (~> 5.0.0)
+    - FormTextField
     - PercentEncoder (~> 1.2)
     - SwiftyRSA (~> 1.5)
   - PercentEncoder (1.2.1)
@@ -26,9 +24,9 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CocoaAsyncSocket
     - CocoaMQTT
-    - CreditCardRow
     - CryptoSwift
     - Eureka
+    - FormTextField
     - PercentEncoder
     - SwiftyRSA
 
@@ -39,10 +37,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   CocoaMQTT: 56f7a757a65c65bbb4df17c6f06aeea79fb2969c
-  CreditCardRow: 50a5ecf90d8e9660ed1e9d54a4340e7a22d2259d
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
-  MobpayiOS: aab2dc07b69f8caabe76858d7e95ac6466bd823d
+  FormTextField: fd5dc441ad40ba12d08ef66aeb0453ee9bf55e6d
+  MobpayiOS: 8a7e82fb12da54d7c54b589996c4c6b454d7055b
   PercentEncoder: 40a4d727ebeda2a6ec77bf34fa620cc4b5845488
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
