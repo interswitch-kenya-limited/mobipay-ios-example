@@ -380,43 +380,6 @@ class ViewController: FormViewController{
                     try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in self.showResponse(message: completion)}
             }
             
-            
-            <<< ButtonRow(){
-                $0.title = "Submit card Payment"
-                }.onCellSelection{cell,row in
-                    let cardInput = Card(pan: String(self.pan), cvv: String(self.cvv), expiryYear: String(self.expYear), expiryMonth: String(self.expMonth), tokenize: self.tokenize)
-                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
-                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
-                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
-                    //get webURL
-                    let webCardinalURL = Mobpay.instance.generateCardWebQuery(card: cardInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret)
-                    let svc = SFSafariViewController(url: webCardinalURL)
-                    self.present(svc, animated: true, completion: nil)
-                    //get value with callback
-                    Mobpay.instance.getReturnPayload(merchantId: self.merchantId,transactionRef: self.transactionRef){(payloadFromServer) in
-                        self.dismiss(animated: true)
-                        self.showResponse(message: payloadFromServer)
-                        
-                    }
-        }
-        
-            <<< ButtonRow(){
-                $0.title = "Submit Token Payment"
-                }.onCellSelection{cell,row in
-                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
-                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
-                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
-                    let cardToken = CardToken(token: self.token, expiry: self.expiry, cvv: String(self.cvv))
-                    //get url
-                    let webCardinalURL = Mobpay.instance.generateCardTokenWebQuery(cardToken: cardToken, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret)
-                    let svc = SFSafariViewController(url: webCardinalURL)
-                    self.present(svc, animated: true, completion: nil)
-                    //get value with callback
-                    Mobpay.instance.getReturnPayload(merchantId: self.merchantId,transactionRef: self.transactionRef){(payloadFromServer) in
-                        self.dismiss(animated: true)
-                        self.showResponse(message: payloadFromServer)
-                    }
-        }
             <<< ButtonRow("Launch UI"){(row: ButtonRow) -> Void in
                 row.title = row.tag
                 }.onCellSelection{cell,row in
@@ -430,7 +393,33 @@ class ViewController: FormViewController{
                     }
                 }
         }
-    }    
+            <<< ButtonRow("Submit Card Payment"){(row: ButtonRow) -> Void in
+                row.title = row.tag
+                }.onCellSelection{cell,row in
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    let cardInput = Card(pan: String(self.pan), cvv: String(self.cvv), expiryYear: String(self.expYear), expiryMonth: String(self.expMonth), tokenize: self.tokenize)
+
+                    try!Mobpay.instance.submitCardPayment(card: cardInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret,previousUIViewController: self){(completion) in
+                        self.showResponse(message: completion)
+                    }
+        }
+            <<< ButtonRow("Submit Card Token"){(row: ButtonRow) -> Void in
+                row.title = row.tag
+                }.onCellSelection{cell, row in
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    let cardToken = CardToken(token: self.token, expiry: self.expiry, cvv: String(self.cvv))
+                    
+                    try!Mobpay.instance.submitTokenPayment(cardToken: cardToken, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret,previousUIViewController: self){
+                        (completion) in
+                        self.showResponse(message: completion)
+                    }
+                    
+        }
+    }
 }
 extension ViewController:MobpayPaymentDelegate{
     func launchUIPayload(_ message: String) {

@@ -1,6 +1,6 @@
 PODS:
   - CocoaAsyncSocket (7.6.3)
-  - CocoaMQTT (1.2.4):
+  - CocoaMQTT (1.2.5):
     - CocoaAsyncSocket (~> 7.6.3)
   - CryptoSwift (1.0.0)
   - Eureka (5.0.0)
@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
-  CocoaMQTT: 56f7a757a65c65bbb4df17c6f06aeea79fb2969c
+  CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
   FormTextField: fd5dc441ad40ba12d08ef66aeb0453ee9bf55e6d
