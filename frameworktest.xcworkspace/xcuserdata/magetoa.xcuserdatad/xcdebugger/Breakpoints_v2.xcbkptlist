@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "011012E2-C657-4EBE-9015-CF00ED8D941D"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D9D46D68-097A-46D6-8CF2-16C2047CAC79"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "10D7A511-D6FC-4EB0-994E-56CC22A0F745"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -38,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5EA2D1DF-F7D5-49FD-B698-167CA872F1DB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -54,6 +58,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "50D1BEC8-F37A-4830-9294-CC3DBD100FDE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -65,43 +70,12 @@
             endingLineNumber = "85"
             landmarkName = "submitCardPayment(card:merchant:payment:customer:clientId:clientSecret:previousUIViewController:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MobpayiOS.Mobpay.submitCardPayment(card: MobpayiOS.Card, merchant: MobpayiOS.Merchant, payment: MobpayiOS.Payment, customer: MobpayiOS.Customer, clientId: Swift.String, clientSecret: Swift.String, previousUIViewController: __C.UIViewController, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "MobpayiOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/mobpay-ios/mobpay-ios/Mobpay.swift"
-                  timestampString = "587566141.756551"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "5571">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (CocoaMQTT.CocoaMQTT, CocoaMQTT.CocoaMQTTMessage, Swift.UInt16) -&gt; () in MobpayiOS.Mobpay.submitCardPayment(card: MobpayiOS.Card, merchant: MobpayiOS.Merchant, payment: MobpayiOS.Payment, customer: MobpayiOS.Customer, clientId: Swift.String, clientSecret: Swift.String, previousUIViewController: __C.UIViewController, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "MobpayiOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/mobpay-ios/mobpay-ios/Mobpay.swift"
-                  timestampString = "587566141.758508"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "273">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "536DE186-69D8-4855-853D-BE434CA5233C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -118,6 +92,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7D4072A3-E174-418F-A910-D02525E7BB42"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -134,6 +109,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DA670F4F-C981-4ED2-BD73-BEEECDB3E9A0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -150,6 +126,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "83452DBA-C8B2-49FB-A55A-7D6D2788ABCA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -166,6 +143,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "65EC6CC8-5668-4B1F-A547-849FF72D62F9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -182,6 +160,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "0A9D9E77-2BD1-440E-B361-5F6B488C936A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
