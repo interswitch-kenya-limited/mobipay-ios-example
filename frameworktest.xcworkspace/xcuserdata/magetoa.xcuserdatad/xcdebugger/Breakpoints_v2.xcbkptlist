@@ -1,326 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "011012E2-C657-4EBE-9015-CF00ED8D941D"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D9D46D68-097A-46D6-8CF2-16C2047CAC79"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.492564"
+            filePath = "../mobpay-ios/mobpay-ios/Mobpay.swift"
+            timestampString = "587639256.826282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "makeMobileMoneyPayment(mobile:merchant:payment:customer:clientId:clientSecret:completion:)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "submitCardPayment(card:merchant:payment:customer:clientId:clientSecret:previousUIViewController:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "10D7A511-D6FC-4EB0-994E-56CC22A0F745"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.4929349"
+            filePath = "../mobpay-ios/mobpay-ios/Mobpay.swift"
+            timestampString = "587639256.8269399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "Mobpay"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.493169"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "makeCardPayment(card:merchant:payment:customer:clientId:clientSecret:completion:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "submitCardPayment(card:merchant:payment:customer:clientId:clientSecret:previousUIViewController:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5EA2D1DF-F7D5-49FD-B698-167CA872F1DB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.49339"
+            filePath = "../mobpay-ios/mobpay-ios/Mobpay.swift"
+            timestampString = "587639256.8273799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "submitCardPayment(card:merchant:payment:customer:clientId:clientSecret:previousUIViewController:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "50D1BEC8-F37A-4830-9294-CC3DBD100FDE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.493606"
+            filePath = "../mobpay-ios/mobpay-ios/Mobpay.swift"
+            timestampString = "587639256.827816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "submitCardPayment(card:merchant:payment:customer:clientId:clientSecret:previousUIViewController:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "536DE186-69D8-4855-853D-BE434CA5233C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.493816"
+            filePath = "../mobpay-ios/mobpay-ios/CardPaymentUI.swift"
+            timestampString = "587639256.828295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "submitPayment(clientId:clientSecret:httpRequest:payload:completion:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "init(payment:customer:merchantConfig:cardTokens:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7D4072A3-E174-418F-A910-D02525E7BB42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/CardPaymentUI.swift"
+            timestampString = "587639256.8285249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "init(payment:customer:merchantConfig:cardTokens:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA670F4F-C981-4ED2-BD73-BEEECDB3E9A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/MobilePaymentUI.swift"
+            timestampString = "587639256.828825"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "refreshButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83452DBA-C8B2-49FB-A55A-7D6D2788ABCA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.494031"
+            filePath = "../mobpay-ios/mobpay-ios/MobilePaymentUI.swift"
+            timestampString = "587639256.8290319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "makeMobileMoneyPayment(mobile:merchant:payment:customer:clientId:clientSecret:completion:)"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "refreshButtons()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "65EC6CC8-5668-4B1F-A547-849FF72D62F9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.494246"
+            filePath = "../mobpay-ios/mobpay-ios/MobilePaymentUI.swift"
+            timestampString = "587639256.829226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "Mobpay"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
+            landmarkName = "refreshButtons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A9D9E77-2BD1-440E-B361-5F6B488C936A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../mobpay-ios/mobpay-ios/MobilePaymentUI.swift"
+            timestampString = "587639256.829385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "560"
+            endingLineNumber = "560"
+            landmarkName = "MobilePaymentUI"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.494457"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "makeMobileMoneyPayment(mobile:merchant:payment:customer:clientId:clientSecret:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mobpay.Mobpay.makeMobileMoneyPayment(mobile: mobpay.Mobile, merchant: mobpay.Merchant, payment: mobpay.Payment, customer: mobpay.Customer, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/Pods/mobpay/mobpay-ios/Mobpay.swift"
-                  timestampString = "581266302.435614"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "3014">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in mobpay.Mobpay.makeMobileMoneyPayment(mobile: mobpay.Mobile, merchant: mobpay.Merchant, payment: mobpay.Payment, customer: mobpay.Customer, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/Pods/mobpay/mobpay-ios/Mobpay.swift"
-                  timestampString = "581266302.437554"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.494673"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "submitMobilePayment(clientId:clientSecret:httpRequest:payload:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.4949"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "submitMobilePayment(clientId:clientSecret:httpRequest:payload:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "frameworktest/ViewController.swift"
-            timestampString = "581428811.495142"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.495199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "makeCardPayment(card:merchant:payment:customer:clientId:clientSecret:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mobpay.Mobpay.makeCardPayment(card: mobpay.Card, merchant: mobpay.Merchant, payment: mobpay.Payment, customer: mobpay.Customer, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/Pods/mobpay/mobpay-ios/Mobpay.swift"
-                  timestampString = "581266302.445344"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "3876">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in mobpay.Mobpay.makeCardPayment(card: mobpay.Card, merchant: mobpay.Merchant, payment: mobpay.Payment, customer: mobpay.Customer, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/Pods/mobpay/mobpay-ios/Mobpay.swift"
-                  timestampString = "581266302.447065"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "157"
-                  endingLineNumber = "157"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/mobpay/mobpay-ios/Mobpay.swift"
-            timestampString = "581428811.4954261"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "makeCardPayment(card:merchant:payment:customer:clientId:clientSecret:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "mobpay.Mobpay.makeCardPayment(card: mobpay.Card, merchant: mobpay.Merchant, payment: mobpay.Payment, customer: mobpay.Customer, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/Pods/mobpay/mobpay-ios/Mobpay.swift"
-                  timestampString = "581266302.449937"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "3876">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in mobpay.Mobpay.makeCardPayment(card: mobpay.Card, merchant: mobpay.Merchant, payment: mobpay.Payment, customer: mobpay.Customer, clientId: Swift.String, clientSecret: Swift.String, completion: (Swift.String) -&gt; ()) throws -&gt; ()"
-                  moduleName = "mobpay"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/magetoa/Desktop/Framework/frameworktest/Pods/mobpay/mobpay-ios/Mobpay.swift"
-                  timestampString = "581266302.4521151"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "157"
-                  endingLineNumber = "157"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

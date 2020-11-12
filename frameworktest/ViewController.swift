@@ -7,61 +7,83 @@
 //
 
 import UIKit
-//import Alamofire
-import mobpay
+import MobpayiOS
 import Eureka
 import CryptoSwift
-//import CreditCardRow
+import SafariServices
+
 class ViewController: FormViewController{
     //CLIENT VARIABLES
-    var clientId:String = "";
-    var clientSecret:String = "";
+    var clientId:String = "IKIA7C2981C715915A2D9DF952D8422F956BAB4ABB8A";
+    var clientSecret:String = "2NZ4AlYFzabz6+eTMp9pYJvcgWTLjfYBvsFQFRkfuUc=";
     
     //CUSTOMER VARIABLES
-    var customerId:String = "";
-    var firtsName:String = "";
-    var secondName:String = "";
-    var emailAddress:String = "";
-    var mobileNumber:String = "";
-    var city:String = "";
-    var country:String = "";
-    var postalCode:String = "";
-    var street:String = "";
-    var state:String = "";
+    var customerId:String = "test@example.com";
+    var firstName:String = "John";
+    var secondName:String = "Doe";
+    var emailAddress:String = "johndoe@test.com";
+    var mobileNumber:String = "0712345678";
+    var city:String = "NBI";
+    var country:String = "KE";
+    var postalCode:String = "00200";
+    var street:String = "Westlands";
+    var state:String = "NBI";
     
     //merchant variables
-    var merchantId:String = "";
-    var merchantDomain:String = "";
+    var merchantId:String = "ISWKEN0001";
+    var merchantDomain:String = "ISWKE";
     //payment Details
-    var paymentAmount:Int = 0;
-    var transactionRef:String = "";
-    var orderId:String = "";
-    var termianalId:String = "";
-    var terminalType:String = "";
-    var paymentItem:String = "";
-    var currency:String = "";
-    var preauth:String = "";
-    var narration:String = "";
+    var paymentAmount:Int = Int.random(in: 0 ... 999);
+    var transactionRef:String = "LINiOS0009";
+    var orderId:String = "LINiOS0009";
+    var termianalId:String = "3CRZ0001";
+    var terminalType:String = "MOBILE";
+    var paymentItem:String = "CRD";
+    var currency:String = "KES";
+    var preauth:String = "1";
+    var narration:String = "Test iOS";
     //card variables
-    var pan:Int = 0;
-    var cvv:Int = 0;
-    var expYear:Int = 0;
-    var expMonth:Int = 0;
-    var tokenize:Bool = false;
+    var pan:String = "4111111111111111";
+    var cvv:String = "234";
+    var expYear:String = "23";
+    var expMonth:String = "02";
+    var tokenize:Bool = true;
+    
     //mobile
-    var phone:Int = 0;
+    var phone:String = "0712345678";
     
+    //token
+    var cardTokens : Array<CardToken> = []
+    var goodToken:CardToken = CardToken(token: "1E83B03ACFC5DF31985B83CF1F018B63AD54134DA6C425E83D", expiry: "11/22", cvv: "111", panLast4Digits: "1111", panFirst6Digits: "411111")
+    var tokens:Array<String> = ["1E83B03ACFC5DF31985B83CF1F018B63AD54134DA6C425E83D"];
+    var token:String = ""
+    var expiry:String = "0222"
     
+    func showResponse(message: String){
+        //while showing the response if theres a token it will add the token to the array
+        let responseAsJson = convertToDictionary(message: message)
+        let tokenExists = responseAsJson?["token"] != nil
+        if(tokenExists == true){
+            self.cardTokens.append(CardToken(token: responseAsJson?["token"] as! String, expiry: responseAsJson?["expiry"] as! String, panLast4Digits: responseAsJson?["panLast4Digits"] as! String, panFirst6Digits: responseAsJson?["panFirst6Digits"] as! String))
+            self.tokens.append(responseAsJson?["token"] as! String)
+            self.form.rowBy(tag: "ExampleTokens")?.updateCell()
+        }
+        let alert = UIAlertController(title: "Backend Report", message: message, preferredStyle: .alert);
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel,handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func convertToDictionary(message: String) -> [String: Any]? {
+        if let data = message.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        func showResponse(message: String){
-            let alert = UIAlertController(title: "Backend Report", message: message, preferredStyle: .alert);
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel,handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-        }
         //CUSTOMER DETAILS SECTION
         form
         +++ Section("Client Details")
@@ -69,6 +91,7 @@ class ViewController: FormViewController{
                 row in
                 row.title = "Client Id"
                 row.placeholder = "Client Id"
+                row.value = clientId
         
             }.onChange({(row) in
                 self.clientId = row.value != nil ? row.value! : ""
@@ -77,25 +100,31 @@ class ViewController: FormViewController{
                 row in
                 row.title = "Client Secret"
                 row.placeholder = "Client Secret"
-            }
+                row.value = clientSecret
+                }.onChange({(row) in
+                    self.clientSecret = row.value != nil ? row.value! : ""
+                })
         +++ Section("Customer Details")
             <<< TextRow(){row in
                 row.title = "Customer ID"
                 row.add(rule: RuleRequired())
                 row.placeholder = "Customer ID"
+                row.value = customerId
                 }.onChange({ (row) in
                     self.customerId = row.value != nil ? row.value! : ""
                 })
             <<< TextRow(){row in
                 row.title = "First Name"
                 row.placeholder = "Enter First Name"
+                row.value = firstName
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
-                    self.firtsName = row.value != nil ? row.value! : ""
+                    self.firstName = row.value != nil ? row.value! : ""
                 })
             <<< TextRow(){row in
                 row.title = "Second Name"
                 row.placeholder = "Enter Second Name"
+                row.value = secondName
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.secondName = row.value != nil ? row.value! : ""
@@ -103,6 +132,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Email Address"
                 row.placeholder = "Enter Email Address"
+                row.value = emailAddress
                 row.add(rule: RuleEmail())
                 row.add(rule: RuleRequired())
                 }.cellUpdate {
@@ -116,6 +146,7 @@ class ViewController: FormViewController{
             <<< PhoneRow(){row in
                 row.title = "Mobile Number"
                 row.placeholder = "Enter Phone Number"
+                row.value = mobileNumber
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.mobileNumber = row.value != nil ? row.value! : ""
@@ -123,6 +154,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "City"
                 row.placeholder = "City"
+                row.value = city
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.city = row.value != nil ? row.value! : ""
@@ -130,6 +162,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Country"
                 row.placeholder = "Country"
+                row.value = country
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.country = row.value != nil ? row.value! : ""
@@ -137,6 +170,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Postal Code"
                 row.placeholder = "Postal Code"
+                row.value = postalCode
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.postalCode = row.value != nil ? row.value! : ""
@@ -144,6 +178,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Street"
                 row.placeholder = "Street"
+                row.value = street
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.street = row.value != nil ? row.value! : ""
@@ -151,6 +186,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "State"
                 row.placeholder = "State"
+                row.value = state
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.state = row.value != nil ? row.value! : ""
@@ -161,6 +197,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Merchant Id"
                 row.placeholder = "Merchant Id"
+                row.value = merchantId
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.merchantId = row.value != nil ? row.value! : ""
@@ -168,6 +205,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Domain"
                 row.placeholder = "Domain"
+                row.value = merchantDomain
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.merchantDomain = row.value != nil ? row.value! : ""
@@ -178,6 +216,7 @@ class ViewController: FormViewController{
             <<< IntRow(){row in
                 row.title = "Amount"
                 row.placeholder = "999"
+                row.value = paymentAmount
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.paymentAmount = row.value != nil ? row.value! : 0
@@ -185,6 +224,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "TransactionRef"
                 row.placeholder = "TransactionRef"
+                row.value = transactionRef
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.transactionRef = row.value != nil ? row.value! : ""
@@ -192,6 +232,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Order ID"
                 row.placeholder = "Order Id"
+                row.value = orderId
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.orderId = row.value != nil ? row.value! : ""
@@ -199,6 +240,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Terminal Type"
                 row.placeholder = "Terminal Type"
+                row.value = terminalType
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.terminalType = row.value != nil ? row.value! : ""
@@ -206,6 +248,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Terminal Id"
                 row.placeholder = "Terminal Id"
+                row.value = termianalId
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.termianalId = row.value != nil ? row.value! : ""
@@ -213,6 +256,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Payment Item"
                 row.placeholder = "Payment Item"
+                row.value = paymentItem
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.paymentItem = row.value != nil ? row.value! : ""
@@ -220,6 +264,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Currency"
                 row.placeholder = "Currency"
+                row.value = currency
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.currency = row.value != nil ? row.value! : ""
@@ -227,6 +272,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Narration"
                 row.placeholder = "Narration"
+                row.value = narration
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.narration = row.value != nil ? row.value! : ""
@@ -234,6 +280,7 @@ class ViewController: FormViewController{
             <<< TextRow(){row in
                 row.title = "Preauth"
                 row.placeholder = "Preauth"
+                row.value = preauth
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
                     self.preauth = row.value != nil ? row.value! : ""
@@ -241,98 +288,142 @@ class ViewController: FormViewController{
         
         //CARD DETAILS
         +++ Section("Card Details")
-        <<< IntRow(){row in
+        <<< TextRow(){row in
                 row.title = "PAN"
                 row.placeholder = "4111 1111 1111 1111"
                 row.add(rule: RuleRequired())
+                row.value = pan
 //                row.formatter = Formatter()
             }.onChange({ (row) in
-                self.pan = row.value != nil ? row.value! : 0
+                self.pan = row.value != nil ? row.value! : "0"
+//                print(self.pan)
             })
-            <<< IntRow(){row in
+            <<< TextRow(){row in
                 row.title = "CVV"
                 row.placeholder = "999"
                 row.add(rule: RuleRequired())
+                row.value = cvv
                 }.onChange({ (row) in
-                    self.cvv = row.value != nil ? row.value! : 0
+                    self.cvv = row.value != nil ? row.value! : "0"
                 })
-            <<< IntRow(){row in
+            <<< TextRow(){row in
                 row.title = "Expiry Year"
                 row.placeholder = "20"
+                row.value = expYear
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
-                    self.expYear = row.value != nil ? row.value! : 0
+                    self.expYear = row.value != nil ? row.value! : "0"
                 })
-            <<< IntRow(){row in
+            <<< TextRow(){row in
                 row.title = "Expiry Month"
                 row.placeholder = "2"
+                row.value = expMonth
                 row.add(rule: RuleRequired())
                 }.onChange({ (row) in
-                    self.expMonth = row.value != nil ? row.value! : 0
+                    self.expMonth = row.value != nil ? row.value! : "0"
                 })
             <<< SwitchRow(){row in
                 row.title = "Tokenize"
                 row.add(rule: RuleRequired())
-                row.value = true
+                row.value = tokenize
                 }.onChange({ (row) in
                     self.tokenize = row.value != nil ? row.value! : false
                 })
+            <<< ActionSheetRow<String>() {
+                $0.tag = "ExampleTokens"
+                $0.title = "Example Tokens"
+                $0.selectorTitle = "choose your token"
+                $0.options = self.tokens
+                $0.value = self.token
+                }
+                .onPresent { from, to in
+                    to.popoverPresentationController?.permittedArrowDirections = .up
+                }.onChange({
+                    self.token = $0.value != nil ? $0.value! : ""
+                }).cellUpdate { cell, row in
+                    row.options = self.tokens
+            }
+            
+            
             
         
         //MOBILE PAYMENT DETAILS
         +++ Section("Mobile Payment Details")
-        <<< IntRow(){row in
+        <<< TextRow(){row in
             row.title = "Phone"
-            row.placeholder = "0713805241"
+            row.placeholder = "0726983805"
+            row.value = phone
             row.add(rule: RuleRequired())
             }.onChange({ (row) in
-                self.phone = row.value != nil ? row.value! : 0
+                self.phone = row.value != nil ? row.value! : "0"
             })
         
             
         +++ Section()
-            <<< ButtonRow(){row in
-                row.title = "Submit"
-                row.add(rule: RuleRequired())
-                }.onCellSelection({ (cell,row) in
-                    
-                   // let newCard = Card(pan: "4111111111111111", cvv: "123", expiryYear: "20", expiryMonth: "02", tokenize: false)
-                   // let newPayment = Payment(amount: "100", transactionRef: "66809285644", orderId: "OID123453", terminalType: "MOBILE", terminalId: "3TLP0001", paymentItem: "CRD", currency: "KES")
-                   // let newCustomer = Customer(customerId: "12", firstName: "Allan", secondName: "Mageto", email: "allanbmageto@gmail.com", mobile: "0713805241", city: "NBI", country: "KE", postalCode: "00200", street: "WESTLANDS", state: "NBI")
-                   // let newMerchant = Merchant(merchantId: "GEPGTZ0001", domain: "ISWKE")
-                    let card = Card(pan: String(self.pan), cvv: String(self.cvv), expiryYear: String(self.expYear), expiryMonth: String(self.expMonth), tokenize: self.tokenize)
-                    let payment = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
-                    let customer = Customer(customerId: self.customerId, firstName: self.firtsName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
-                    let merchant = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
-                    
-//                    try!Mobpay.instance.makeCardPayment(card: newCard, merchant: newMerchant, payment: newPayment, customer: newCustomer, clientId: "IKIA264751EFD43881E84150FDC4D7F0717AD27C4E64",clientSecret: "J3e432fg5qdpFXDsjlinBPGs/CgCNaUs5BHLFloO3/U="){ (completion) in showResponse(message: completion)
-//                  }
-                    
-                    try!Mobpay.instance.makeCardPayment(card: card, merchant: merchant, payment: payment, customer: customer, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in showResponse(message: completion)
-
-                    }
-                    
-                    
-                    
-                    
-                })
             <<< ButtonRow() {
                 $0.title = "Mobile money"
                 }
                 .onCellSelection { cell, row in
-                    //let newPayment = Payment(amount: "100", transactionRef: "66809285644", orderId: "OID123453", terminalType: "MOBILE", terminalId: "3TLP0001", paymentItem: "CRD", currency: "KES", preauth: "0", narration: "payment-card")
-//                    let newCustomer = Customer(customerId: "12", firstName: "Allan", secondName: "Mageto", email: "allanbmageto@gmail.com", mobile: "0713805241", city: "NBI", country: "KE", postalCode: "00200", street: "WESTLANDS", state: "NBI")
-//                    let newMerchant = Merchant(merchantId: "ISWKEN0001", domain: "ISWKE")
-//                    let newMobile = Mobile(phone: "0713805241")
-                    let payment = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
-                    let customer = Customer(customerId: self.customerId, firstName: self.firtsName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
-                    let merchant = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
-                    let mobile = Mobile(phone: String(self.phone))
+
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    let mobileInput = Mobile(phone: self.phone)
         
-                    try!Mobpay.instance.makeMobileMoneyPayment(mobile: mobile, merchant: merchant, payment: payment, customer: customer, clientId: self.clientId, clientSecret:self.clientSecret){ (completion) in showResponse(message: completion)
-                        
+                    try!Mobpay.instance.makeMobileMoneyPayment(mobile: mobileInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId, clientSecret:self.clientSecret){ (completion) in self.showResponse(message: completion)
                     }
         }
-}
+            
+            <<< ButtonRow(){
+                $0.title = "Confirm Mobile Money Payment"
+                }.onCellSelection {cell , row in
+                    try!Mobpay.instance.confirmMobileMoneyPayment(orderId: self.orderId, clientId: self.clientId,clientSecret: self.clientSecret){ (completion) in self.showResponse(message: completion)}
+            }
+            
+            <<< ButtonRow("Launch UI"){(row: ButtonRow) -> Void in
+                row.title = row.tag
+                }.onCellSelection{cell,row in
+                let merchant = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                let payment = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                let customer = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    try!Mobpay.instance.launchUI(merchant: merchant, payment: payment, customer: customer, clientId: self.clientId, clientSecret: self.clientSecret, cardTokens: self.cardTokens){(launchUI) in
+                    Mobpay.instance.MobpayDelegate = self
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(launchUI, animated: true)
+                    }
+                }
+        }
+            <<< ButtonRow("Submit Card Payment"){(row: ButtonRow) -> Void in
+                row.title = row.tag
+                }.onCellSelection{cell,row in
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    let cardInput = Card(pan: String(self.pan), cvv: String(self.cvv), expiryYear: String(self.expYear), expiryMonth: String(self.expMonth), tokenize: self.tokenize)
 
+                    try!Mobpay.instance.submitCardPayment(card: cardInput, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret,previousUIViewController: self){(completion) in
+                        self.showResponse(message: completion)
+                    }
+        }
+            <<< ButtonRow("Submit Card Token"){(row: ButtonRow) -> Void in
+                row.title = row.tag
+                }.onCellSelection{cell, row in
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    let cardToken = CardToken(token: self.token, expiry: self.expiry, cvv: String(self.cvv))
+                    
+                    try!Mobpay.instance.submitTokenPayment(cardToken: cardToken, merchant: merchantInput, payment: paymentInput, customer: customerInput, clientId: self.clientId,clientSecret: self.clientSecret,previousUIViewController: self){
+                        (completion) in
+                        self.showResponse(message: completion)
+                    }
+                    
+        }
+    }
+}
+extension ViewController:MobpayPaymentDelegate{
+    func launchUIPayload(_ message: String) {
+        self.navigationController?.popToRootViewController(animated: true)
+        showResponse(message: message)
+    }
 }
