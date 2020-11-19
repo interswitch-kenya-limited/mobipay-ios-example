@@ -1,0 +1,6 @@
+framework module MobpayiOS {
+  umbrella header "MobpayiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
