@@ -58,10 +58,6 @@ class ViewController: FormViewController{
     var tokens:Array<String> = ["1E83B03ACFC5DF31985B83CF1F018B63AD54134DA6C425E83D"];
     var token:String = ""
     var expiry:String = "0222"
-    var checkoutData: CheckoutData = CheckoutData(
-        merchantCode: "ISWKEN0001", domain: "ISWKE", transactionReference: "DeChRef_202006112216_fKk", orderId: "DeChOid_202006112216_htr", expiryTime: "", currencyCode: "KES", amount: 100, narration: "Test from new gateway", redirectUrl: "https://uat.quickteller.co.ke/", iconUrl: "", merchantName: "", providerIconUrl: "", reqId: "", dateOfPayment: "2016-09-05T10:20:26", terminalId: "3TLP0001", terminalType: "What?", channel: "WEB", fee: 0, preauth: ""
-    )
-
     
     func showResponse(message: String){
         //while showing the response if theres a token it will add the token to the array
@@ -367,8 +363,15 @@ class ViewController: FormViewController{
             <<< ButtonRow("Launch IPG"){(row: ButtonRow) -> Void in
                 row.title = row.tag
                 }.onCellSelection{cell,row in
+                    
+                    let paymentInput = Payment(amount: String(self.paymentAmount), transactionRef: self.transactionRef, orderId: self.orderId, terminalType: self.terminalType, terminalId: self.termianalId, paymentItem: self.paymentItem, currency: self.currency, preauth: self.preauth, narration: self.narration)
+                    let customerInput = Customer(customerId: self.customerId, firstName: self.firstName, secondName: self.secondName, email: self.emailAddress, mobile: self.mobileNumber, city: self.city, country: self.country, postalCode: self.postalCode, street: self.street, state: self.state)
+                    let merchantInput = Merchant(merchantId: self.merchantId, domain: self.merchantDomain)
+                    
+                    var checkoutData: CheckoutData = CheckoutData(merchant: merchantInput, payment: paymentInput, customer: customerInput)
+                    
                     Task{
-                        try! await Mobpay.instance.submitPayment(checkout: self.checkoutData, previousUIViewController: self){(completion) in
+                        try! await Mobpay.instance.submitPayment(checkout: checkoutData, previousUIViewController: self){(completion) in
                         self.showResponse(message: completion)
                     }
                     }
